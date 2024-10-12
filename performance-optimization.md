@@ -23,17 +23,123 @@ From JVM to distributed systems
 
 ---
 transition: slide-up
+layout: center
 ---
 
 # About me
 
 Ardit Ymeri 
 
+<!-- Find some pictures of me: 
+
+  - summer pictures 
+  - cycling pictures 
+  - swimming pictures 
+  - guitar picture 
+
+
+ -->
+
+<!-- 
+
+- I work as consultant on insurance companies on behalf of Open Value. 
+
+- I moved from albania to austria in 2013 because I wanted to study Logic and Computer Science 
+at Vienna University of Technology. That's the reason I'm here now. 
+
+- It's funny how you put enormous efforts on studying Logic and all theorems about computability theory 
+only to end up working as a software developer in a financial institution .... because that's where the money is. 
+
+I hope my boss doesn't hear that :D 
+
+The reason why i'm saying this is I will mention a few tools today. I'm not working for any of them nor trying to promote any of them. 
+
+In the past tho, I did spend some years working on Java refactoring tools.
+And because of that, i had to dig deeper in the Java features and understand the language and its tools closely. 
+
+-->
+
+---
+transition: slide-left
+layout: center
+level: 1
+---
+
+# Java Optimization
+
+---
+transition: fade-out
+level: 2
+---
+
+# Java Examples - String literals
+
+1. Concatenate string literals 
+<!-- Concatenate string literals -->
+```java
+String welcomeMessage = "Hello" + " everyone" + "! Welcome to" + " the OpenValue Meetup" + "!";
+```
+
+<br/>
+
+2. One string literal
+
+```java
+String welcomeMessage = "Hello everyone! Welcome to the OpenValue Meetup!";
+```
+
+<br/>
+
+3. Using `StringBuilder`
+<!-- Using string builder-->
+```java
+String welcomeMessage = new StringBuilder()
+        .append("Hello")
+        .append(" everyone")
+        .append("! Welcome to")
+        .append(" the OpenValue Meetup")
+        .append("!")
+        .toString();
+
+```
+
+<!-- Find a two java code examples and ask people what is more performant -->
+
+---
+transition: fade-out
+level: 2
+---
+
+# Java Examples - String Concatenation 
+
+1. Using concatenation operator `+`
+<!-- -->
+```java
+String createWelcomeMessage(String user, String eventName) {
+    return "Hello " + user + "! Welcome to " + eventName + "!";
+}
+```
+
+2. Using `StringBuilder`
+<!-- -->
+```java
+String createWelcomeMessageUsingStringBuilder(String user, String event) {
+    return new StringBuilder()
+            .append("Hello ")
+            .append(user)
+            .append("! Welcome to ")
+            .append(event)
+            .append("!")
+            .toString();
+}
+```
+
+
 
 
 
 ---
-transition: fade-up
+transition: fade-out
 layout: two-cols
 layoutClass: gap-16
 ---
@@ -56,7 +162,46 @@ The title will be inferred from your slide content, or you can override it with 
 
 On this talk:
 
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
+<Toc minDepth="1" maxDepth="2"></Toc>
+
+
+
+---
+transition: fade-out
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# On this talk
+
+JVM: 
+- Optimizations from `javac` compiler 
+- Optimizations from the JIT Compiler 
+- GraalVM vs OpenJDK
+- JMH 
+- Profilers 
+- Data leak example 
+- Project loom
+- Virtual threads example 
+
+- Other JVM languages? 
+
+Distributed platforms
+- How to track performance in distributed platforms
+- JMetric 
+- Working with big data: Splitting the work to multiple machines
+
+Blockchain 
+- 
+
+Big data 
+- Map reduce 
+
+
+Problem classifications 
+- Some problems are hard: Exponential time, polynomial space
+- Quantum computing to the rescue?
+
 
 ---
 transition: fade-out
@@ -72,7 +217,7 @@ Content here
 - Let's give it  a try 
 - Let's see how code looks like in here
 
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
+
 
 <!-- This allow you to embed external code blocks -->
 <<< @/snippets/external.ts#snippet
@@ -149,6 +294,12 @@ Profiling is used to find performance hot spots and bottlenecks
 
 - JProfiler 
 - Eclipse MAT
+
+
+---
+src: ./pages/graalvm.md
+hide: false
+---
 
 
 ---
