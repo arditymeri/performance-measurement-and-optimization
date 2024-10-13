@@ -17,7 +17,7 @@ From JVM to distributed systems
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+    <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -60,85 +60,6 @@ And because of that, i had to dig deeper in the Java features and understand the
 -->
 
 ---
-transition: slide-left
-layout: center
-level: 1
----
-
-# Java Optimization
-
----
-transition: fade-out
-level: 2
----
-
-# Java Examples - String literals
-
-1. Concatenate string literals 
-<!-- Concatenate string literals -->
-```java
-String welcomeMessage = "Hello" + " everyone" + "! Welcome to" + " the OpenValue Meetup" + "!";
-```
-
-<br/>
-
-2. One string literal
-
-```java
-String welcomeMessage = "Hello everyone! Welcome to the OpenValue Meetup!";
-```
-
-<br/>
-
-3. Using `StringBuilder`
-<!-- Using string builder-->
-```java
-String welcomeMessage = new StringBuilder()
-        .append("Hello")
-        .append(" everyone")
-        .append("! Welcome to")
-        .append(" the OpenValue Meetup")
-        .append("!")
-        .toString();
-
-```
-
-<!-- Find a two java code examples and ask people what is more performant -->
-
----
-transition: fade-out
-level: 2
----
-
-# Java Examples - String Concatenation 
-
-1. Using concatenation operator `+`
-<!-- -->
-```java
-String createWelcomeMessage(String user, String eventName) {
-    return "Hello " + user + "! Welcome to " + eventName + "!";
-}
-```
-
-2. Using `StringBuilder`
-<!-- -->
-```java
-String createWelcomeMessageUsingStringBuilder(String user, String event) {
-    return new StringBuilder()
-            .append("Hello ")
-            .append(user)
-            .append("! Welcome to ")
-            .append(event)
-            .append("!")
-            .toString();
-}
-```
-
-
-
-
-
----
 transition: fade-out
 layout: two-cols
 layoutClass: gap-16
@@ -154,7 +75,7 @@ You can use the `Toc` component to generate a table of contents for your slides:
 
 The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
 
-<Toc minDepth="1" maxDepth="1"></Toc>
+<Toc minDepth="1" maxDepth="2"></Toc>
 
 ::right::
 
@@ -163,7 +84,6 @@ The title will be inferred from your slide content, or you can override it with 
 On this talk:
 
 <Toc minDepth="1" maxDepth="2"></Toc>
-
 
 
 ---
@@ -201,6 +121,39 @@ Big data
 Problem classifications 
 - Some problems are hard: Exponential time, polynomial space
 - Quantum computing to the rescue?
+
+
+---
+transition: slide-left
+layout: center
+level: 1
+---
+
+# Java Optimization
+
+---
+transition: fade-out
+src: ./pages/string-literals.md
+level: 2
+---
+
+
+
+---
+transition: fade-out
+layout: two-cols
+layoutClass: gap-16
+src: ./pages/string-concatenation-invokedynamic.md
+level: 2
+---
+
+
+---
+transition: fade-out
+level: 2
+---
+
+# 
 
 
 ---
