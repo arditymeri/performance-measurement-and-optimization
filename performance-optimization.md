@@ -138,7 +138,6 @@ level: 2
 ---
 
 
-
 ---
 transition: fade-out
 layout: two-cols
@@ -150,92 +149,40 @@ level: 2
 
 ---
 transition: fade-out
+src: ./pages/measure-execution-time.md
 level: 2
----
-
-# 
-
 
 ---
-transition: fade-out
-layout: image-right
-image: https://cover.sli.dev
----
 
-# What is Slidev? 
-
-Content here 
-
-- Slidev is cool 
-- Let's give it  a try 
-- Let's see how code looks like in here
-
-
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
 
 ---
 transition: fade-out
+src: ./pages/jvm-architecture.md
+level: 2
 layout: center
+class: text-center
+---
+
+
+
+---
+transition: fade-out
 level: 2
 ---
 
-# JVM
-
-
-Let's bring in some code
-
-Java is beautiful 
-
-Other languages too 
-
----
-transition: slide-up
-level: 2
----
-
-# JMH 
+# Java Microbenchmark Harness JMH 
 
 Java Microbenchmark Harness 
 
-Profiling is used to find performance hot spots and bottlenecks 
+Describe JMH
 
-- JProfiler 
-- Eclipse MAT
-
-You only got one shot
+Provide examples with: 
+- Summing up integers with loop, stream, and parallel stream. Draw diagrams with the results 
+- Convert string to upper case using lambda expression vs method references. Draw diagrams with the results
 
 
 ---
-transition: slide-up
+transition: fade-out
 level: 2
 ---
 
@@ -248,11 +195,35 @@ Profiling is used to find performance hot spots and bottlenecks
 - JProfiler 
 - Eclipse MAT
 
+---
+transition: fade-out
+level: 2
+---
+
+# Example - Profiling
+
 
 ---
+transition: fade-out
+level: 2
+---
+
+# Example - Project loom
+
+---
+transition: fade-out
+level: 2
 src: ./pages/graalvm.md
 hide: false
 ---
+
+
+---
+transition: fade-out
+level: 2
+---
+
+# Other JVM Languages
 
 
 ---
