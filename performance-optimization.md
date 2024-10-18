@@ -171,15 +171,108 @@ level: 2
 ---
 
 # Java Microbenchmark Harness JMH 
+A Tool for Accurate Performance Measurement in Java
 
-Java Microbenchmark Harness 
+<div grid="~ cols-2 gap-60">
 
-Describe JMH
+<div>
 
-Provide examples with: 
-- Summing up integers with loop, stream, and parallel stream. Draw diagrams with the results 
-- Convert string to upper case using lambda expression vs method references. Draw diagrams with the results
 
+Purpose: 
+* Measure performance for (small) code snippets
+
+Why Use JMH
+* consider JVM optimizations when benchmarking 
+* warmup effects
+* reliable, reproducible performance results
+</div>
+
+<div>
+
+```mermaid {scale: 0.5}
+flowchart TD
+  A([Start Benchmarking]) --> B[Fork New JVM Instance]
+  B --> C[Warm-Up Phase]
+  C ---|"JIT Optimizations"| D[JIT Optimized Code]
+  D --> E[Measurement Phase]
+  E --> F[Result Aggregation]
+  F --> G([End Benchmarking])
+```
+
+</div>
+</div>
+
+---
+transition: fade-out
+level: 2
+---
+
+# JMH Examples - Loops vs Streams
+
+```java
+import org.openjdk.jmh.annotations.*;
+
+@State(Scope.Thread)
+public class SumBenchmark {
+
+    private List<Integer> numbers;
+
+    @Setup(Level.Trial)
+    public void setup() {
+        numbers = IntStream.range(1, 1_000_000).boxed().toList();
+    }
+
+    @Benchmark
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public int sumUsingForLoop() {
+        int sum = 0;
+        for (int num : numbers) 
+          sum += num;
+        return sum;
+    }
+}
+
+```
+
+---
+transition: fade-out
+level: 2
+---
+
+# JMH Examples - Lambda vs Method Reference
+
+```java
+@Benchmark
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+public List<String> convertToUppercaseUsingLambda() {
+    return strings.stream()
+            .map(s -> s.toUpperCase())
+            .collect(Collectors.toList());
+}
+
+@Benchmark
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+public List<String> convertToUppercaseUsingMethodReference() {
+    return strings.stream()
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+}
+
+```
+
+---
+transition: fade-out
+level: 2
+---
+
+# JMH Diagrams 
+
+Put some diagrams after running benchmarks
+
+Diagram here
 
 ---
 transition: fade-out
@@ -187,13 +280,20 @@ level: 2
 ---
 
 # Profiling 
+Analyze runtime behavior of an application
 
-Java Microbenchmark Harness 
+Why use profilers
+* identify bottlenecks in the code 
+* understand memory allocation and GC patterns
+* gain insights into thread synchronization issues 
 
-Profiling is used to find performance hot spots and bottlenecks 
+Popular profilers
+* VisualVM
+* YourKit
+* JProfiler 
+* Perf
 
-- JProfiler 
-- Eclipse MAT
+
 
 ---
 transition: fade-out

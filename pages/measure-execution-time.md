@@ -5,11 +5,11 @@ public long sumUsingForLoop(List<Integer>numbers) {
     long sum = 0;
 
     long startTime = System.nanoTime();
-    for (Integer number : numbers) {
+    for (int number : numbers) {
         sum += number;
     }
     long endTime = System.nanoTime();
-    
+
     double duration = (endTime - startTime)/1000000d;
     System.out.println("Execution time: " + duration + " milliseconds");
     return sum;
