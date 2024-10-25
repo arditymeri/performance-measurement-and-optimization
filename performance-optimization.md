@@ -60,70 +60,6 @@ And because of that, i had to dig deeper in the Java features and understand the
 -->
 
 ---
-transition: fade-out
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents 
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-<Toc minDepth="1" maxDepth="2"></Toc>
-
-::right::
-
-# Contents
-
-On this talk:
-
-<Toc minDepth="1" maxDepth="2"></Toc>
-
-
----
-transition: fade-out
-layout: image-right
-image: https://cover.sli.dev
----
-
-# On this talk
-
-JVM: 
-- Optimizations from `javac` compiler 
-- Optimizations from the JIT Compiler 
-- GraalVM vs OpenJDK
-- JMH 
-- Profilers 
-- Data leak example 
-- Project loom
-- Virtual threads example 
-
-- Other JVM languages? 
-
-Distributed platforms
-- How to track performance in distributed platforms
-- JMetric 
-- Working with big data: Splitting the work to multiple machines
-
-Blockchain 
-- 
-
-Big data 
-- Map reduce 
-
-
-Problem classifications 
-- Some problems are hard: Exponential time, polynomial space
-- Quantum computing to the rescue?
-
-
----
 transition: slide-left
 layout: center
 level: 1
@@ -293,8 +229,6 @@ Popular profilers
 * JProfiler 
 * Perf
 
-
-
 ---
 transition: fade-out
 level: 2
@@ -320,10 +254,93 @@ hide: false
 
 ---
 transition: fade-out
+level: 1
+---
+
+# Performance Tracking in Distributed environments 
+
+
+---
+transition: fade-out
 level: 2
 ---
 
-# Other JVM Languages
+# JMeter 
+
+---
+transition: fade-out
+level: 2
+---
+
+# JMeter Example 
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Nature of the problems 
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Nature of the problems - examples
+
+---
+transition: fade-out
+level: 1
+---
+
+# Decentralized 
+
+---
+transition: fade-out
+level: 1
+src: ./pages/block-chain-diagram.md
+hide: false
+---
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Quantum computing  
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Quantum computing - Where we are
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Quantum computing - what we expect 
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Take Away  
+- Know the tools: sometimes they help optimizing performance 
+- Identify the pain-points first. Then try to eliminate them 
+- In distributed systems this is easier said then done 
+- Complex problems - practically infinite time complexity 
+- Looking forward to Quantum 
+
 
 
 ---
@@ -334,12 +351,6 @@ class: text-center
 # Resources
 
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
-
-
----
-layout: center
-class: text-center
----
 
 # Thank you 
 
