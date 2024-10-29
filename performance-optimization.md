@@ -232,23 +232,13 @@ Popular profilers
 ---
 transition: fade-out
 level: 2
+src: ./pages/profiling-out-of-memory.md
 ---
-
-# Example - Profiling
-
 
 ---
 transition: fade-out
 level: 2
----
-
-# Example - Project loom
-
----
-transition: fade-out
-level: 2
-src: ./pages/graalvm.md
-hide: false
+src: ./pages/profiling-virtual-threads.md
 ---
 
 
@@ -257,7 +247,11 @@ transition: fade-out
 level: 1
 ---
 
-# Performance Tracking in Distributed environments 
+# Performance Tracking in distributed environments 
+
+<br>
+
+![Performance monitoring with Grafana](./media/PerformanceTracking-Light-2.drawio.png){class="mx-auto block" style="width: 55%"}
 
 
 ---
