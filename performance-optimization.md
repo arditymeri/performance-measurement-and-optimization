@@ -95,8 +95,6 @@ level: 2
 transition: fade-out
 src: ./pages/jvm-architecture.md
 level: 2
-layout: center
-class: text-center
 ---
 
 
@@ -107,9 +105,9 @@ level: 2
 ---
 
 # Java Microbenchmark Harness JMH 
-A Tool for Accurate Performance Measurement in Java
+A tool for accurate performance measurement in Java
 
-<div grid="~ cols-2 gap-60">
+<div grid="~ cols-2 gap-40">
 
 <div>
 
@@ -117,7 +115,7 @@ A Tool for Accurate Performance Measurement in Java
 Purpose: 
 * Measure performance for (small) code snippets
 
-Why Use JMH
+Why using JMH
 * consider JVM optimizations when benchmarking 
 * warmup effects
 * reliable, reproducible performance results
@@ -125,15 +123,8 @@ Why Use JMH
 
 <div>
 
-```mermaid {scale: 0.5}
-flowchart TD
-  A([Start Benchmarking]) --> B[Fork New JVM Instance]
-  B --> C[Warm-Up Phase]
-  C ---|"JIT Optimizations"| D[JIT Optimized Code]
-  D --> E[Measurement Phase]
-  E --> F[Result Aggregation]
-  F --> G([End Benchmarking])
-```
+![Java Microbenchmark Harness](./media/PerformanceTracking-JMH.drawio.png){class="mx-auto block" style="width: 45%"}
+
 
 </div>
 </div>
@@ -204,11 +195,113 @@ transition: fade-out
 level: 2
 ---
 
-# JMH Diagrams 
+# Loops vs Streams Performance (ms/op)
 
-Put some diagrams after running benchmarks
+<!-- Chart Container -->
+<div class="chart-container">
+  <div v-for="(size, index) in collectionSizes" :key="index" class="bar-group">
+    <div class="bars">
+      <!-- Loop Bar -->
+      <div class="bar bar-loop" :style="{ height: `${loopTimes[index] * 0.5}px` }"> <!-- Scaled down by 0.5 -->
+        <span class="bar-label">{{ loopTimes[index] }} </span>
+      </div>
+      <!-- Stream Bar -->
+      <div class="bar bar-stream" :style="{ height: `${streamTimes[index] * 0.5}px` }"> <!-- Scaled down by 0.5 -->
+        <span class="bar-label">{{ streamTimes[index] }} </span>
+      </div>
+    </div>
+    <!-- Collection Size Label -->
+    <div class="size-label">{{ size }}k</div>
+  </div>
+</div>
 
-Diagram here
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-color bar-loop"></div>
+    <span>Loops</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color bar-stream"></div>
+    <span>Streams</span>
+  </div>
+</div>
+
+<script setup>
+const collectionSizes = [100, 250, 350, 500, 750, 1000];
+const loopTimes = [42, 108, 149, 223, 342, 478]; // Adjust these values as needed
+const streamTimes = [48, 130, 169, 248, 391, 509]; // Adjust these values as needed
+</script>
+
+
+<style>
+.legend {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+}
+
+.bar-loop, .legend-color.bar-loop {
+  background-color: #6baed6;
+}
+
+.bar-stream, .legend-color.bar-stream {
+  background-color: #fd8d3c;
+}
+
+/* Existing styles for the chart */
+.chart-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: center;
+  height: 300px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bars {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 20px;
+  position: relative;
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -15px;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.size-label {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
 
 ---
 transition: fade-out
@@ -247,12 +340,11 @@ transition: fade-out
 level: 1
 ---
 
-# Performance Tracking in distributed environments 
+# Performance Tracking in Distributed Environments 
 
 <br>
 
-![Performance monitoring with Grafana](./media/PerformanceTracking-Light-2.drawio.png){class="mx-auto block" style="width: 55%"}
-
+![Performance monitoring with Grafana](./media/PerformanceTracking-GrafanaAndPrometheusMonitoring.drawio.png){class="mx-auto block" style="width: 55%"}
 
 ---
 transition: fade-out
@@ -266,37 +358,115 @@ transition: fade-out
 level: 2
 ---
 
-# JMeter Example 
+# Prometheus 
+
+---
+transition: fade-out
+level: 2
+---
+
+# Graphana 
 
 
 ---
 transition: fade-out
+layout: center
 level: 1
 ---
 
 # Nature of the problems 
 
+---
+transition: fade-out
+level: 2
+---
+
+# Algorithmic Optimization Problems 
+
+Improve efficiency of algorithms 
+
+Profiling 
+
+
+<div class="grid grid-cols-10 place-items-center gap-4">
+
+  <div> 
+
+  ![YourKit](./media/logos/yourkit_logo.svg){class="mx-auto block"}
+
+  </div>
+
+  <div> 
+
+  ![JProfiler](./media/logos/Codework-Inc-jprofile.png){class="mx-auto block"}
+
+  </div>
+
+  <div> 
+  
+  ![VisualVM](./media/logos/visualvm_logo_big.png){class="mx-auto block"}
+  
+  </div>
+
+  <div>
+
+  ![JDK Mission Control](./media/logos/JDK_Mission_Control_(logo).png){class="mx-auto block" style="width: 70%"}
+  
+  </div>
+
+
+</div>
+
+
+
+Benchmarking 
+
+
+---
+transition: fade-out
+level: 2
+---
+
+# Data-intensive problems 
+
+* Split the work into multiple machines 
+* Combine the result 
+
+
+![Hadoop](./media/PerformanceTracking-HadoopMapReduce.drawio.png){class="mx-auto block" style="width: 70%"}
+
+---
+transition: fade-out
+level: 2
+---
+
+# Combinatorial/Exponential Search Problems  
+
+Complexity Theory: NP-Hard or NP-Complete classes
+
+* Easy to guess and check 
+* Enormous search space 
+
+Examples: 
+- Routing problems 
+- Graph partitioning 
+- ...
+
+Applications: 
+- Logistics 
+- Cryptography 
+- Blockchain and cryptocurrency 
+- ...
+
 
 ---
 transition: fade-out
 level: 1
 ---
 
-# Nature of the problems - examples
+# Blockchain
 
----
-transition: fade-out
-level: 1
----
-
-# Decentralized 
-
----
-transition: fade-out
-level: 1
-src: ./pages/block-chain-diagram.md
-hide: false
----
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Node.drawio.png){class="mx-auto block" style="width: 100%"}
 
 
 ---
@@ -304,7 +474,9 @@ transition: fade-out
 level: 1
 ---
 
-# Quantum computing  
+# Blockchain Decentralized
+
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Network-Full.drawio.png){class="mx-auto block" style="width: 90%"}
 
 
 ---
@@ -312,7 +484,13 @@ transition: fade-out
 level: 1
 ---
 
-# Quantum computing - Where we are
+# Quantum computing - Fundamentals 
+
+
+- Superposition 
+- Entanglement 
+- Coherence 
+- Interference 
 
 
 ---
@@ -320,7 +498,22 @@ transition: fade-out
 level: 1
 ---
 
-# Quantum computing - what we expect 
+# Quantum computing - Applications
+
+- Quantum simulation 
+- Cryptography 
+- Chemistry 
+- Material and drug production 
+- Machine learning
+- ... 
+
+
+---
+transition: fade-out
+level: 1
+---
+
+# Quantum computing - where are we
 
 
 ---
@@ -329,7 +522,7 @@ level: 1
 ---
 
 # Take Away  
-- Know the tools: sometimes they help optimizing performance 
+- Know your tools: sometimes they help optimizing performance 
 - Identify the pain-points first. Then try to eliminate them 
 - In distributed systems this is easier said then done 
 - Complex problems - practically infinite time complexity 
