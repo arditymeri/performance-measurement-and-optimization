@@ -1,5 +1,7 @@
 # Measuring execution time
 
+<br/>
+
 ```java
 public long sumUsingForLoop(List<Integer>numbers) {
     long sum = 0;
@@ -17,9 +19,9 @@ public long sumUsingForLoop(List<Integer>numbers) {
 ```
 
 <!-- 
-1. Find a code example 
-2. Measure with milliseconds  
-  2.1. Measure with nanoseconds instead 
-3. What is the problem? 
-4. Use JMH 
+
+What are the problems:
+- one time measurement - inaccurate. Not reliable 
+- doesnt take into account JVM optimizations and warm ups
+
 -->

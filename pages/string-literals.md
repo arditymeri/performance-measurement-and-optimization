@@ -29,4 +29,4 @@ String welcomeMessage = new StringBuilder()
 
 ```
 
-<!-- Find a two java code examples and ask people what is more performant -->
+<!-- Find two java code examples and ask people what is more performant -->

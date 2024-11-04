@@ -3,7 +3,7 @@
 1. Using concatenation operator `+`
 <!-- -->
 ```java
-String welcomeMessage(String user, String event) {
+String welcomeMessage(String user) {
   return "Hello " + 
           user + 
           "! Welcome to OpenValue Vienna Meetup!";
@@ -16,7 +16,7 @@ String welcomeMessage(String user, String event) {
 2. Using `StringBuilder`
 <!-- -->
 ```java
-String welcomeMessage(String user, String event) {
+String welcomeMessage(String user) {
   return new StringBuilder()
           .append("Hello ")
           .append(user)
@@ -58,3 +58,6 @@ String welcomeMessage(String user, String event) {
 ```
 
 </div>
+
+
+<!--  -->

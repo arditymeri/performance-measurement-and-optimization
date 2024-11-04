@@ -154,64 +154,16 @@ Why use JMH for Benchmarking?
 
 ---
 transition: fade-out
+src: ./pages/jmh-loop-vs-stream-code.md
 level: 2
 ---
-
-# JMH Examples - Loops vs Streams
-
-```java
-import org.openjdk.jmh.annotations.*;
-
-@State(Scope.Thread)
-public class SumBenchmark {
-
-    private List<Integer> numbers;
-
-    @Setup(Level.Trial)
-    public void setup() {
-        numbers = IntStream.range(1, 1_000_000).boxed().toList();
-    }
-
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
-    public int sumUsingForLoop() {
-        int sum = 0;
-        for (int num : numbers) 
-          sum += num;
-        return sum;
-    }
-}
-
-```
 
 ---
 transition: fade-out
+src: /pages/jmh-lambda-vs-method-reference-code.md
 level: 2
 ---
 
-# JMH Examples - Lambda vs Method Reference
-
-```java
-@Benchmark
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
-public List<String> convertToUppercaseUsingLambda() {
-    return strings.stream()
-            .map(s -> s.toUpperCase())
-            .collect(Collectors.toList());
-}
-
-@Benchmark
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
-public List<String> convertToUppercaseUsingMethodReference() {
-    return strings.stream()
-            .map(String::toUpperCase)
-            .collect(Collectors.toList());
-}
-
-```
 
 ---
 transition: fade-out
@@ -229,22 +181,26 @@ src: ./pages/jmh-lambda-vs-method-reference.md
 
 ---
 transition: fade-out
+layout: image-right
+image: "./media/profiling-background.webp"
 level: 2
 ---
 
 # Profiling 
-Analyze runtime behavior of an application
+Analyze the runtime behavior of an application
 
 Why use profilers
 * identify bottlenecks in the code 
-* understand memory allocation and GC patterns
-* gain insights into thread synchronization issues 
+* understand memory allocation and GC
+* gain insights into thread synchronization 
 
 Popular profilers
+* JMC and Flight recorder
+* IntelliJ Profiler
 * VisualVM
 * YourKit
 * JProfiler 
-* Perf
+* ...
 
 ---
 transition: fade-out
@@ -266,13 +222,6 @@ level: 1
 ---
 
 # Distributed Services
-
-
-<!-- <div>
-
-![Distributed Services](./media/PerformanceTracking-DistributedServices.drawio.png){ style="width: 65%"}
-
-</div> -->
 
 
 ---
@@ -382,16 +331,16 @@ layout: center
 level: 1
 ---
 
-# Nature of the problems 
+# The Nature of Problems 
 
 ---
 transition: fade-out
 level: 2
 ---
 
-# Algorithmic Optimization Problems 
+# The Nature of Problems (1/3) 
 
-Improve efficiency of algorithms 
+Algorithmic Optimization Problems  - Improve efficiency of algorithms 
 
 Profiling 
 
@@ -464,7 +413,8 @@ transition: fade-out
 level: 2
 ---
 
-# Data-intensive problems 
+# The Nature of Problems (2/3) 
+Data-intensive problems 
 
 * Split the work into multiple machines 
 * Combine the result 
@@ -479,16 +429,15 @@ transition: slide-left
 level: 2
 ---
 
-# Combinatorial/Exponential Search Problems  
-
-Complexity Theory: NP-Hard or NP-Complete classes
+# The Nature of Problems (3/3) 
+Combinatorial/Exponential Search Problems - Complexity Theory: NP 
 
 * Easy to guess and check 
 * Enormous search space 
 
 Examples: 
 - Routing problems 
-- Graph partitioning 
+- Graph theory 
 - ...
 
 Applications: 
@@ -497,7 +446,16 @@ Applications:
 - Blockchain and cryptocurrency 
 - ...
 
-<!-- -->
+<!--
+
+Then we have Combinatorial or exponential search problems 
+Searching is generally something trivial implement - guess and check procedure
+The difficult part stands on the search space. 
+If the search space grows exponentially with the size of the input, then soon it becomes practically impossible to iterate the entire search space
+
+
+
+ -->
 
 ---
 transition: fade-out
