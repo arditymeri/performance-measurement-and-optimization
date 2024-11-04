@@ -22,7 +22,7 @@ From JVM to distributed systems
 </div>
 
 ---
-transition: slide-up
+transition: slide-left
 layout: center
 ---
 
@@ -60,7 +60,7 @@ And because of that, i had to dig deeper in the Java features and understand the
 -->
 
 ---
-transition: slide-left
+transition: fade-out
 layout: center
 level: 1
 ---
@@ -235,6 +235,22 @@ level: 2
 src: ./pages/profiling-virtual-threads.md
 ---
 
+---
+transition: fade-out
+layout: center
+class: text-left
+level: 1
+---
+
+# Distributed Services
+
+
+<!-- <div>
+
+![Distributed Services](./media/PerformanceTracking-DistributedServices.drawio.png){ style="width: 65%"}
+
+</div> -->
+
 
 ---
 transition: fade-out
@@ -247,12 +263,35 @@ level: 1
 
 ![Performance monitoring with Grafana](./media/PerformanceTracking-GrafanaAndPrometheusMonitoring.drawio.png){class="mx-auto block" style="width: 55%"}
 
+<!-- -->
+
 ---
 transition: fade-out
 level: 2
 ---
 
 # JMeter 
+
+<br/>
+
+<div grid="~ cols-2 gap-2">
+
+<div>
+
+  ![Prometheus Requests Count](./media/graphana/JMeter1.png){class="mx-auto block"}
+
+</div>
+
+<div>
+
+  ![Prometheus Requests Count](./media/graphana/JMeter2.png){class="mx-auto block"}
+
+</div>
+
+</div>
+  
+
+<!-- -->
 
 ---
 transition: fade-out
@@ -261,12 +300,57 @@ level: 2
 
 # Prometheus 
 
+<br/>
+
+<div grid="~ cols-2 gap-2">
+
+<div>
+
+  ![Prometheus Requests Count](./media/graphana/Prometheus-3.png){class="mx-auto block"}
+
+</div>
+
+<div>
+
+![Prometheus Requests Count](./media/graphana/Prometheus-2.png){class="mx-auto block"}
+
+</div>
+
+</div>
+
+  
+
+<!-- -->
+
 ---
-transition: fade-out
+transition: slide-left
 level: 2
 ---
 
-# Graphana 
+# Grafana 
+
+
+<br/>
+
+<div grid="~ cols-2 gap-2">
+
+<div>
+
+![Grafana](./media/graphana/Graphana1.png){class="mx-auto block"}
+
+</div>
+
+<div>
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- -->
 
 
 ---
@@ -315,13 +399,42 @@ Profiling
   
   </div>
 
+  <div class="col-span-4">
+
+ ![Java Flight Recorder](./media/profiler/FlightRecorder-2.png){class="mx-auto block" style="width: 70%"}
+ 
+
+  </div>
+</div>
+
+
+
+Benchmarking & Monitoring
+
+<div class="grid grid-cols-2 place-items-center gap-4">
+
+
+<div> 
+
+ ![Prometheus](./media/graphana/Prometheus-3.png){class="mx-auto block" style="width: 60%"}
+
+
+</div>
+
+
+<div> 
+
+ ![Grafana](./media/graphana/Graphana1.png){class="mx-auto block" style="width: 70%"}
+
+</div>
+
 
 </div>
 
 
 
-Benchmarking 
 
+<!-- -->
 
 ---
 transition: fade-out
@@ -336,8 +449,10 @@ level: 2
 
 ![Hadoop](./media/PerformanceTracking-HadoopMapReduce.drawio.png){class="mx-auto block" style="width: 70%"}
 
+<!-- -->
+
 ---
-transition: fade-out
+transition: slide-left
 level: 2
 ---
 
@@ -359,33 +474,85 @@ Applications:
 - Blockchain and cryptocurrency 
 - ...
 
+<!-- -->
+
+---
+transition: fade-out
+level: 1
+layout: center
+---
+
+# Blockchain Concepts
 
 ---
 transition: fade-out
 level: 1
 ---
 
-# Blockchain
+# Blockchain - Node
 
-![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Node.drawio.png){class="mx-auto block" style="width: 100%"}
+<br/> 
+
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Node.drawio.png){class="mx-auto block" style="width: 90%"}
+
+<!-- -->
 
 
 ---
-transition: fade-out
+transition: slide-out
 level: 1
 ---
 
 # Blockchain Decentralized
 
-![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Network-Full.drawio.png){class="mx-auto block" style="width: 90%"}
+<div>
 
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Network-Full-mining-1.drawio.png){class="mx-auto block" style="width: 90%"}
+
+</div>
+
+---
+transition: slide-out
+level: 1
+---
+
+# Blockchain Decentralized
+
+<div>
+
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Network-Full-mining-2.drawio.png){class="mx-auto block" style="width: 90%"}
+
+</div>
+
+---
+transition: slide-left
+level: 1
+---
+
+# Blockchain Decentralized
+
+<div>
+
+![Performance monitoring with Grafana](./media/PerformanceTracking-Blockchain-Network-Full-mining-3.drawio.png){class="mx-auto block" style="width: 90%"}
+
+</div>
+
+<!-- -->
+
+---
+transition: fade-out
+level: 1
+layout: center
+---
+
+# Quantum Computing
 
 ---
 transition: fade-out
 level: 1
 ---
 
-# Quantum computing - Fundamentals 
+# Quantum Computing - Fundamentals 
 
 <div grid="~ cols-2 gap-2">
 
@@ -412,8 +579,50 @@ level: 1
 
 </div>
 
+<!-- 
+
+When it comes to quantum computing, the fundamental unit of information is a Qubit. Which is analogous to the bits in classical computing, but it has some substantial differences. 
+
+Understanding the differences requires some basic understanding of four key principles of quantum mechanics. 
+
+Superposition - While classical bits can exists in either of two states - typically represented by 0 and 1, a Qubit can also be in a superposition of both states. 
+Superposition is the state in which a quantum particle or system can represent not just one possibility, but a combination of multiple possibilities that can be expressed with probability magnitudes. 
+
+Decoherence -  Decoherence is the process in which quantum particles and systems can decay, collapse or change, converting into single states measurable by classical physics.  
+
+Entanglement - Entanglement is the process in which multiple quantum particles become correlated more strongly than regular probability allows.
+
+Interference - Interference is the phenomenon in which entangled quantum states can interact and produce more and less likely probabilities.
+
+
+Qubits
+
+
+A qubit can behave like a bit and store either a zero or a one, but it can also be a weighted combination of zero and one at the same time. 
+When combined, qubits in superposition can scale exponentially. 
+Two qubits can compute with four pieces of information, three can compute with eight, and four can compute with sixteen.
+
+However, each qubit can only output a single bit of information at the end of the computation. 
+Quantum algorithms work by storing and manipulating information in a way inaccessible to classical computers, which can provide speedups for certain problems.
+
+
+Generally, qubits are created by manipulating and measuring quantum particles (the smallest known building blocks of the physical universe), such as photons, electrons, trapped ions and atoms. 
+Qubits can also engineer systems that behave like a quantum particle, as in superconducting circuits.
+
+
+How the principles work together
+
+To better understand quantum computing, consider that two counterintuitive ideas can both be true. The first is that objects that can be measured—qubits in superposition with defined probability amplitudes—behave randomly. The second is that objects too distant to influence each other—entangled qubits—can still behave in ways that, though individually random, are somehow strongly correlated. 
+
+A computation on a quantum computer works by preparing a superposition of computational states. 
+A quantum circuit, prepared by the user, uses operations to generate entanglement, leading to interference between these different states, as governed by an algorithm. 
+Many possible outcomes are canceled out through interference, while others are amplified. 
+The amplified outcomes are the solutions to the computation.
+
+-->
+
 ---
-transition: fade-out
+transition: slide-left
 level: 1
 ---
 
@@ -427,8 +636,58 @@ level: 1
 - ... 
 
 
+<!-- 
+
+When is quantum computing superior?
+
+For most kinds of tasks and challenges, traditional computers are expected to remain the best solution. 
+But when scientists and engineers encounter certain very complex problems, that’s where quantum comes into play.
+For these types of difficult calculations, even the most powerful supercomputers (big machines with thousands of traditional cores and processors) pale in comparison to quantum computing’s power. 
+That’s because even supercomputers are binary code-based machines reliant on 20th-century transistor technology. 
+Classical computers are simply unable to process such complex problems.
+
+Complex problems are problems with lots of variables interacting in complicated ways. Modeling the behavior of individual atoms in a molecule is a complex problem, because of all the different electrons interacting with one another. Identifying new physics in a supercollider is also a complex problem. There are some complex problems that we do not know how to solve with classical computers at any scale.
+
+A classical computer might be great at difficult tasks like sorting through a big database of molecules. 
+But it struggles to solve more complex problems, like simulating how those molecules behave. 
+Today, if scientists want to know how a molecule will behave, they must synthesize it and experiment with it in the real world. 
+If they want to know how a slight tweak would impact its behavior, they usually need to synthesize the new version and run their experiment all over again. 
+This is an expensive, time-consuming process that impedes progress in fields as diverse as medicine and semiconductor design.
+
+A classical supercomputer might try to simulate molecular behavior with brute force, by using its many processors to explore every possible way every part of the molecule might behave. But as it moves past the simplest, most straightforward molecules available, the supercomputer stalls. 
+No computer has the working memory to handle all the possible permutations of molecular behavior by using any known methods.
+
+Quantum algorithms take a new approach to these sorts of complex problems—creating multidimensional computational spaces or running calculations that behave much like these molecules themselves. 
+This turns out to be a much more efficient way of solving complex problems like chemical simulations. 
+
+Engineering firms, financial institutions and global shipping companies—among others—are exploring use cases where quantum computers could solve important problems in their fields. 
+An explosion of benefits from quantum research and development is taking shape on the horizon. 
+As quantum hardware scales and quantum algorithms advance, many big, important problems like molecular simulation should find solutions.
+
+Quantum computing use cases
+
+First theorized in the early 1980s, it wasn’t until 1994 that MIT mathematician Peter Shor published one of the first practical real-world applications for a quantum machine. 
+Shor’s algorithm for integer factorization demonstrated how a quantum mechanical computer could potentially break the most advanced cryptography systems of the time—some of which are still used today. 
+Shor’s findings demonstrated a viable application for quantum systems, with dramatic implications for not just cybersecurity, but many other fields. 
+
+Quantum computers excel at solving certain complex problems with the potential to speed up the processing of large-scale data sets. 
+From the development of new drugs and performing machine learning in a new way to supply-chain optimization and climate change challenges, quantum computing might hold the key to breakthroughs in a number of critical industries.
+
+Pharmaceuticals
+Quantum computers capable of simulating molecular behavior and biochemical reactions could massively speed up the research and development of life-saving new drugs and medical treatments. 
+
+Chemistry
+For the same reasons quantum computers could impact medical research, they might also provide undiscovered solutions for mitigating dangerous or destructive chemical byproducts. 
+Quantum computing could lead to improved catalysts that enable petrochemical alternatives or better processes for the carbon breakdown necessary for combating climate-threatening emissions. 
+
+Machine learning
+As interest and investment in artificial intelligence (AI) and related fields like machine learning ramps up, researchers are pushing AI models to new extremes, testing the limits of our existing hardware and demanding tremendous energy consumption. 
+There is evidence that some quantum algorithms might be able to look at datasets in a new way, providing a speedup for some machine learning problems.
+
+-->
+
 ---
-transition: fade-out
+transition: slide-left
 level: 1
 ---
 
@@ -443,12 +702,20 @@ level: 1
 
 ---
 layout: center
-class: text-center
+class: text-left
 ---
 
 # Resources
 
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+
+Quantum computing: 
+- [IBM - What is quantum computing](https://www.ibm.com/topics/quantum-computing)
+- [The quantum clock is ticking: How quantum safe is your organization?](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/quantum-safe)
+
+
+<br/>
+<br/>
 
 # Thank you 
 
