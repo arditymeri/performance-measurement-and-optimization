@@ -23,12 +23,35 @@ From JVM to distributed systems
 
 ---
 transition: slide-left
-layout: center
 ---
 
 # About me
 
-Ardit Ymeri 
+Dipl.-Ing. Ardit Ymeri 
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+![Ardit Ymeri](./media/ardit/Ardit-profile-pic.png){ style="width: 35%"}
+
+ <ul>
+  <li>Senior Software Engineer at OpenValue <img src="./media/logos/OpenValue-logo.png" style="display: inline; vertical-align: middle; width: 7%;" /></li>
+  <li>Studied Logic and Computation at TU Wien <img src="./media/logos/tuwien-logo.svg" style="display: inline; vertical-align: middle; width: 5%;" /></li>
+  <li>Studied Computer Engineering at UPT Tirana <img src="./media/logos/Logo-UPT-me-elemente-blu-277x300.png" style="display: inline; vertical-align: middle; width: 5%;" /></li>
+  <li>Moved to Vienna <img src="./media/logos/2560px-Vienna_logo.webp" style="display: inline; vertical-align: middle; width: 5%;" /> in 2013</li>
+ </ul>
+
+ </div>
+
+<div class="relative w-[300px] h-[300px]">
+  <img v-click src="./media/ardit/ArditCycling.png" alt="Cycling" class="absolute inset-0" style="top: 0; left: 0; width: 75%;" />
+  <img v-click src="./media/ardit/Ardits-guitar.png" alt="swimming" class="absolute inset-0" style="top: 35px; left: 35px; width: 75%;" />
+  <img v-click src="./media/ardit/Ardit-Swimming.png" alt="swimming" class="absolute inset-0" style="top: -20px; left: 20px; width: 75%;" />
+  <img v-click src="./media/ardit/Ardit-Hallstatt.png" alt="Image 3" class="absolute inset-0" style="top: 20px; left: -20px; width: 85%;" />
+</div>
+
+</div>
 
 <!-- Find some pictures of me: 
 
@@ -115,8 +138,8 @@ A tool for accurate performance measurement in Java
 Purpose: 
 * Measure performance for (small) code snippets
 
-Why using JMH
-* consider JVM optimizations when benchmarking 
+Why use JMH for Benchmarking?
+* consider JVM optimizations 
 * warmup effects
 * reliable, reproducible performance results
 </div>
