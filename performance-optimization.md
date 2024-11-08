@@ -11,9 +11,9 @@ mdc: true
 overviewSnapshots: true
 ---
 
-# Performance tracking and optimization
+# Performance Tracking and Optimization
 
-From JVM to distributed systems 
+From JVM to Distributed Systems 
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -46,8 +46,8 @@ Dipl.-Ing. Ardit Ymeri
 
 <div class="relative w-[300px] h-[300px]">
   <img v-click src="./media/ardit/ArditCycling.png" alt="Cycling" class="absolute inset-0" style="top: 0; left: 0; width: 75%;" />
-  <img v-click src="./media/ardit/Ardits-guitar.png" alt="swimming" class="absolute inset-0" style="top: 35px; left: 35px; width: 75%;" />
   <img v-click src="./media/ardit/Ardit-Swimming.png" alt="swimming" class="absolute inset-0" style="top: -20px; left: 20px; width: 75%;" />
+  <img v-click src="./media/ardit/Ardits-guitar.png" alt="swimming" class="absolute inset-0" style="top: 35px; left: 35px; width: 75%;" />
   <img v-click src="./media/ardit/Ardit-Hallstatt.png" alt="Image 3" class="absolute inset-0" style="top: 20px; left: -20px; width: 85%;" />
 </div>
 
@@ -89,12 +89,6 @@ level: 1
 ---
 
 # Java Optimization
-
----
-transition: fade-out
-src: ./pages/string-literals.md
-level: 2
----
 
 
 ---
@@ -158,25 +152,11 @@ src: ./pages/jmh-loop-vs-stream-code.md
 level: 2
 ---
 
----
-transition: fade-out
-src: /pages/jmh-lambda-vs-method-reference-code.md
-level: 2
----
-
 
 ---
 transition: fade-out
 level: 2
 src: ./pages/jmh-loop-vs-stream.md
----
-
-
-
----
-transition: fade-out
-level: 2
-src: ./pages/jmh-lambda-vs-method-reference.md
 ---
 
 ---
@@ -208,11 +188,7 @@ level: 2
 src: ./pages/profiling-out-of-memory.md
 ---
 
----
-transition: fade-out
-level: 2
-src: ./pages/profiling-virtual-threads.md
----
+
 
 ---
 transition: fade-out
@@ -313,8 +289,6 @@ level: 2
 </div>
 
 <div>
-
-
 
 </div>
 
@@ -602,6 +576,20 @@ The amplified outcomes are the solutions to the computation.
 
 -->
 
+<!-- 
+
+There is a lot of enthusiasm out there about quantum computing and the advantages it can bring. 
+
+Without going too much into details on the fundamental concepts of quantum computing, I think, it is important to understand that the vast majority of programs will continue running on 'classical' computers, as we know them. 
+
+To take advantage of quantum computers, we have to formulate the problems randomized algorithms that can exploit the powerful advantage of quantum bits compared to classical bits. 
+
+For example, factorizing a composed number into prime numbers is a problem that is considered difficult to solve with traditional computers, but there is already a known algorithm called 'Shor's' algorithm that can take advantage of quantum computing. 
+
+Other areas that can take advantage of quantum computing are material engineering, pharmaceutics, quantum simulators, etc.. 
+It turns out, that it is much easier to simulate particle behaviors using quantum computers rather than using classical computers. 
+
+ -->
 ---
 transition: slide-left
 level: 1
@@ -688,11 +676,8 @@ class: text-left
 
 # Resources
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) 
 
-Quantum computing: 
-- [IBM - What is quantum computing](https://www.ibm.com/topics/quantum-computing)
-- [The quantum clock is ticking: How quantum safe is your organization?](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/quantum-safe)
 
 
 <br/>
